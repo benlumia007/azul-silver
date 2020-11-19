@@ -35,3 +35,4 @@
                     <?php get_search_form(); ?>
                 </div>
             </div>
+            <div class="content-wrapper">
