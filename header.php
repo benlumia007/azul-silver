@@ -20,7 +20,7 @@
                         <img src = "<?php header_image(); ?>" class = "header-image" width = "<?php echo get_custom_header()->width; ?>" height = "<?php echo get_custom_header()->height; ?>" alt="" />
                     <?php endif; ?>
             </header>
-            <nav class = "primary-navigation cf">
+            <nav id = "site-navigation">
                     <?php wp_nav_menu(array(
                         'theme_location'    => 'primary-navigation', 
                         'container'         => '',
@@ -29,5 +29,5 @@
                         'menu_class'        => 'primary-navigation',
                         'items_wrap'        => '<ul class = "%2$s">%3$s</ul>',
                         )); 
-                    ?>
-			</nav>
+                    ?>           
+            </nav>
