@@ -91,10 +91,6 @@ features.
 		// Add dropdown toggle that display child menu items.
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + azulsilverScreenReaderText.expand + '</button>' );
 
-		// Toggle buttons and submenu items with active children menu items.
-		container.find( '.current-menu-ancestor > button' ).addClass( 'toggle-on' );
-		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
-
 		container.find( '.dropdown-toggle' ).click( function( e ) {
 			var _this = $( this );
 			e.preventDefault();
@@ -108,7 +104,7 @@ features.
 
 	// Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
 	$( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
-		if ( 'primary' === params.wpNavMenuArgs.theme_location ) {
+		if ( 'primary-navigation' === params.wpNavMenuArgs.theme_location ) {
 			initMainNavigation( params.newContainer );
 
 			// Re-sync expanded states from oldContainer.
