@@ -1,11 +1,10 @@
 <?php
 /*
 ================================================================================================
-Azul Silver - sidebar.php
+Azul Silver - content-custom-sidebar.php
 ================================================================================================
-This is the most generic template file in a WordPress theme and is one of the requirements to 
-display widgets on the right side of the page. This is the post content sidebar that is assigned
-in the widget area in the customizer and widget area.
+This is the most generic template file in a WordPress theme and is one required files to display
+content. This content.php is the main content that will be displayed.
 
 @package        Azul Silver WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
@@ -14,6 +13,13 @@ in the widget area in the customizer and widget area.
 ================================================================================================
 */
 ?>
-<div id="widget-area" class="widget-area">
-    <?php dynamic_sidebar('primary'); ?>
-</div>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header">
+        <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+    </header>
+    <div class="entry-content">
+        <?php the_content(); ?>
+        <?php wp_link_pages(); ?>
+    </div>
+</article>
+<?php comments_template(); ?>

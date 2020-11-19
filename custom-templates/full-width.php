@@ -1,14 +1,17 @@
 <?php
 /*
 ================================================================================================
-Azul Silver - single.php
+Azul Silver - index.php
+Template Name: Full Width Template
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
-for a theme (the other content-single.php). The single.php template can be used to call out the
-WordPress loop and uses the get_template_part(); to call in the content-single.php to display
-the content.
+for a theme (the other style.css). The index.php template file is flexible. It can be used to 
+include all references to the header, content, widget, footer and any other pages created in 
+WordPress. Or it can be divided into modular template files, each taking on part of the workload. 
+If you do not provide other template files, WordPress may have default files or functions to 
+perform their jobs.
 
-@package        Silver Quantum WordPress Theme
+@package        Azul Silver WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://lumiathemes.com/)
@@ -16,10 +19,10 @@ the content.
 */
 ?>
 <?php get_header(); ?>
-    <div id="content-area" class="content-area">
+    <div id="content-area" class="content-area full-width">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'single'); ?>
+                <?php get_template_part('template-parts/content', 'full-width'); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
@@ -28,5 +31,4 @@ the content.
                     <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
     </div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
