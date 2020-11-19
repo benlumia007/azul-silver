@@ -1,0 +1,468 @@
+/*
+Theme Name: Azul Silver
+Author: Benjamin Lu
+Description: Azul Silver is highly customizable, simple, and easy to navigate. Azul Silver also has the capability to change different sidebars within the theme. Users can also customize the header and the navigation and many other features.
+License: Azul Silver is distributed under the terms of the GNU GPL.
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-header, custom-background, custom-menu, one-column, right-sidebar, two-columns
+Version: 0.0.1
+Text Domain: azulsilver
+
+This theme like WordPress is licensed under the GPL.
+use it to make something cool, have fun, and share what you have learned with others.
+*/ 
+
+/************************* Nicolas Gallagher Micro Clearfixed Solution *************************/
+/* 1. The space content is one way to avoid an Opera bug when the contenteditable attribute    */
+/*    is included anywhere else in the document. Otherwise it causes space to appear at the    */
+/*    top and the bottom of elements that are clearfixed.                                      */
+/* 2. The use of the table rather than block is only necessary if using :before to contain the */
+/*    top-margins of child element.                                                            */
+/************************* Nicolas Gallagher Micro Clearfixed Solution *************************/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+
+
+/************************* Azul Silver Main Layout *************************/
+body {
+  background: #999999;
+  font-family: Calibri;
+  font-size: 11pt;	
+  margin-top: 20px;
+}
+
+#container {
+  background: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 0 1em 0;
+  margin: 0 auto;
+  padding: 10px 10px 10px 10px;
+  width: 960px;	
+}
+
+.site-header {
+  background: url(images/header-image.jpg) no-repeat;
+  height: 210px;
+}
+
+hgroup {
+  height: auto;
+  line-height: 25px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  position: absolute;
+  text-align: center;
+  width: auto;
+}
+
+.site-title {
+  font-size: 28pt;
+  margin: 0;
+  padding: 0;
+}
+
+.site-title a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.site-description {
+  color: #FFFFFF;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-image {
+  max-width: 100%;
+
+}
+
+.site-footer {
+  color: #FFFFFF;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
+  width: 960px;
+}
+
+.site-footer a {
+  color: red;
+}
+
+/************************* Azul Silver Site Navigation Layout *************************/
+
+/* Primary Horizontal Menu */
+.site-navigation {
+  background: #515151;
+  border-bottom: 0.3em solid #000000;
+  font-size: 12pt;
+  line-height: 1em;
+  height: 2em;
+  margin-bottom: 10px;
+}
+
+.primary-navigation {
+  color: #FFFFFF;
+  display: block;
+}
+
+.primary-navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-navigation li {
+  float: left;
+  position: relative;
+}
+
+.primary-navigation a {
+  color: #FFFFFF;
+  display: block;
+  padding: 8px 15px 8px 15px;
+  text-decoration: none;
+}
+
+.primary-navigation li:hover > a {
+  background: #333333;
+}
+
+/*Drop Down Menu */
+.primary-navigation ul ul {
+  display: none;
+  float: left;
+  left:0;
+  position: absolute;
+  top: 30x;
+}
+
+.primary-navigation ul ul a {
+  background: #666666;
+  left: 0;
+  width: 170px;
+}
+
+/* Sub-Menu Navigation */
+.primary-navigation ul ul ul {
+  left: 200px;
+  top: 0;
+}
+
+.primary-navigation li:hover > a, .primary-navigation ul ul :hover > a {
+  background: #333333;;  
+  color: #FFFFFF;
+  display: block;
+
+}
+
+.primary-navigation ul li:hover > ul {
+  display: block;	
+}
+
+.primary-navigation ul li.current_page_item > a {o
+  color: #fff;	
+  cursor: default;
+}
+
+.primary-navigation ul li.current-menu-ancestor > a {
+  background: #000000;
+  color: #fff;	
+  cursor: default;
+}
+
+.primary-navigation ul li.current-menu-item > a {
+  background: #000000;
+  color: #fff;	
+  cursor: default;
+}
+
+.primary-navigation ul li.current-menu-parent > a {
+  background: #000000;
+  color: #fff;	
+  cursor: default;
+}
+
+/************************* Azul Silver Main Content Layout *************************/
+.site-content {
+  float: left;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 700px;
+}
+
+.site-content a {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+.entry-title {
+  background: #515151;
+  border-bottom: 0.3em solid #000000;
+  color: #EEEEEE;
+  font-size: 12pt;
+  margin: 0 0 0 0;
+  padding: 5px 8px 5px 8px;
+}
+
+
+.entry-content {
+  margin: 5px 8px;
+}
+
+.entry-title {
+  color: #FFFFFF;
+}
+
+.entry-title a {
+  color: #CCCCCC;
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  color: #EEEEEE;
+}
+
+.entry-metadata-posted-on {
+  font-size: 10pt;
+  margin: 0 0 10px 0;
+}
+
+.entry-metadata-posted-in {
+  font-size: 10pt;
+  margin: 2px 0 25px 0;
+}
+
+/************************* Azul Silver Sidebar Content Layout *************************/
+.site-sidebar {
+  float: right;
+  list-style-type: none;
+  width: 245px;
+}
+
+.site-sidebar ul, .site-sidebar ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-sidebar ul li a {
+  color: #0000FF;
+  display: block;
+  margin-bottom: 0.3em solid #000000;
+  padding: 3px 8px 3px 8px;
+  text-decoration: none;
+  width: auto;
+}
+
+.site-sidebar ul li:last-child a {
+  margin-bottom: 20px;
+}
+
+.widget-title {
+  background: #515151;
+  color: #EEEEEE;
+  font-size: 12pt;
+  border-bottom: 0.3em solid #000000;
+  margin: 0;
+  padding: 5px 8px 5px 8px;
+}
+
+.textwidget {
+  padding: 3px 8px 3px 8px;
+}
+
+.textwidget:last-child {
+  margin-bottom: 20px;
+}	
+
+.searchform {
+  padding: 3px 8px 3px 8px;
+}
+
+.searchform:last-child {
+  margin-bottom: 20px;
+}
+
+.tagcloud {
+  font-size: 11pt;
+  padding: 3px 8px 3px 8px;
+  margin-bottom: 20px;
+}
+
+.tagcloud a {
+  color: #0000FF;
+  font-size: 11pt;
+  text-decoration: none;
+}
+
+.recentcomments {
+  padding: 5px 8px 3px 8px;
+}
+
+.recentcomments:last-child {
+  margin-bottom: 20px;
+}
+
+span.comment-author-link {
+  padding: 5px 8px 5px 8px;
+}
+
+/************************* Azul Silver Calendar Content Layout *************************/
+#wp-calendar {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#wp-calendar caption {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+#wp-calendar a {
+  text-decoration: none;
+}
+
+.comment-list {
+  background: #cccccc;
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 20px 0 10px 20px;
+}
+
+.comment-list li {
+  list-style-type: none;
+}
+
+.comments-title {
+  margin-top: 20px;
+  margin-bottom: 20px; 
+  font-size: 13pt;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.comments-area article header {
+	margin: 0 0 10px;
+}
+.comments-area article header img {
+	float: left;
+	padding: 0;
+	line-height: 0;
+}
+.comments-area article header cite,
+.comments-area article header time {
+	margin-left: 55px;
+}
+.comments-area article header cite {
+	font-size: 50pt;
+}
+
+.comments-area article header time {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #5e5e5e;
+}
+.comments-area article header a {
+	text-decoration: none;
+	color: #0195c5;
+}
+.comments-area article header a:hover {
+	color: #21759b;
+}
+.comments-area article header cite a {
+	color: #0195c5;
+}
+.comments-area article header cite a:hover {
+	text-decoration: none;
+}
+
+.avatar {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.reply {
+  margin-bottom: 20px;
+}
+.comment-form-author label {
+  display: block;
+}
+
+.comment-form-email label {
+  display: block;
+}
+
+.comment-form-url label {
+  display: block;
+}
+ 
+.comment-form-comment  label{
+  display: block;
+}
+
+.comment-reply-title {
+  margin-top: 20px;
+}
+
+.form-allowed-tags {
+  font-size: 9pt;
+  margin-bottom: 10px;
+}
+
+.wp-caption {
+
+}
+
+.wp-caption-text {
+
+}
+
+.sticky {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor(
+
+)
+
+.alignleft {
+
+}
+
+.alignright {
+
+}
+
+.aligncenter{
+
+}
+
+img {
+  max-width: 100%;
+}
+
