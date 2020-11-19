@@ -53,6 +53,9 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.4.1
+- bump version to 0.4.1
+
 Version: 0.4.0 - 
 - Theme URI Changed
 - Author URI Changed
