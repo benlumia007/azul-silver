@@ -4,7 +4,7 @@
             <?php get_template_part('content', get_post_format()); ?>
     <?php endwhile; ?>
 		<div class="post-navigation">
-			<?php azulsilver_paging_navigation(); ?>
+			<?php azul_silver_paging_navigation(); ?>
 		</div>
     <?php else : ?>
             <?php get_template_part('content', 'none'); ?>

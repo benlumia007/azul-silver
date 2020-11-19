@@ -21,13 +21,13 @@
             <nav class="primary-navigation cf">
             <div class="search-toggle cf">
                 <i class="fa fa-search cf"> </i>
-                <a href ="#search-container" class="screen-reader-text cf"><?php _e('Search', 'azulsilver'); ?></a>
+                <a href ="#search-container" class="screen-reader-text cf"><?php _e('Search', 'azul-silver'); ?></a>
             </div>
                     <?php wp_nav_menu(array(
                         'theme_location'    => 'primary-navigation', 
                         )); 
                     ?> 
-                    <?php azulsilver_social_menu(); ?>
+                    <?php azul_silver_social_menu(); ?>
             </nav>
 
             <div id="search-container" class="search-box-wrapper cf">

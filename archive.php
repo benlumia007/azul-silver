@@ -3,22 +3,22 @@
 			<h2 class="content-archive">
 			<?php 
 				if (is_category()) {
-					printf(__('Category: ','azulsilver'));
+					printf(__('Category: ','azul-silver'));
 					echo single_cat_title(); 
 				} elseif (is_tag()) {
-					printf(__('Tag: ', 'azulsilver'));
+					printf(__('Tag: ', 'azul-silver'));
 					echo single_tag_title(); 
 				} elseif (is_author()) {
-					printf(__('Author Archives: ', 'azulsilver'));
+					printf(__('Author Archives: ', 'azul-silver'));
 					echo get_the_author(); 
 				} elseif (is_day()) {
-					printf(__('Daily Archives: ', 'azulsilver'));
+					printf(__('Daily Archives: ', 'azul-silver'));
 					echo get_the_date();
 				} elseif (is_month()) {
-					printf(__('Monthly Archives: ', 'azulsilver'));
+					printf(__('Monthly Archives: ', 'azul-silver'));
 					echo get_the_date('F Y');
 				} elseif (is_year()) {
-					printf(__('Yearly Archives: ', 'azulsilver'));
+					printf(__('Yearly Archives: ', 'azul-silver'));
 					echo get_the_date('Y');
 				}else {
 					echo 'Archives: ';
