@@ -3,19 +3,23 @@
 			<h2 class = "content-archive">
 			<?php 
 				if (is_category()) {
-					single_cat_title('Category: ', true);
+					printf(__('Category: ','azulsilver'));
+					echo single_cat_title(); 
 				} elseif (is_tag()) {
-					single_tag_title('Tag: ', true);
+					printf(__('Tag: ', 'azulsilver'));
+					echo single_tag_title(); 
 				} elseif (is_author()) {
-					the_post();
-						echo 'Author Archives: ' . get_the_author(); 
-						rewind_posts();
+					printf(__('Author Archives: ', 'azulsilver'));
+					echo get_the_author(); 
 				} elseif (is_day()) {
-					echo 'Daily Archive: ' . get_the_date();
+					printf(__('Daily Archives: ', 'azulsilver'));
+					echo get_the_date();
 				} elseif (is_month()) {
-					echo 'Monthly Archive: ' . get_the_date('F Y');
+					printf(__('Monthly Archives: ', 'azulsilver'));
+					echo get_the_date('F Y');
 				} elseif (is_year()) {
-					echo 'Yearly Archive: ' . get_the_date('Y');
+					printf(__('Yearly Archives: ', 'azulsilver'));
+					echo get_the_date('Y');
 				}else {
 					echo 'Archives: ';
 				}
