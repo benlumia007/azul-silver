@@ -30,8 +30,10 @@ if (!function_exists('azulsilver_theme_setup')){
 		// Support Search Form in HTML5 format
 		add_theme_support( 'html5', array( 'search-form' ) );
 		
-        // Register Navigation Menu
-        register_nav_menu('primary-navigation', __('Primary Navigation', 'azulsilver') );
+                // Register Navigation Menu
+                register_nav_menus(array(
+                'primary-navigation' => __('Primary Navigation', 'azulsilver'),
+                ));
 		
 		// This theme styles the visual editor with editor-styles.css to mach the theme style.
 		add_editor_style();

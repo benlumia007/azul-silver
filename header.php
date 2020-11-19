@@ -22,7 +22,7 @@
             </header>
             <nav class = "primary-navigation cf">
                     <?php wp_nav_menu(array(
-                        'theme-location'    => 'primary-navigation', 
+                        'theme_location'    => 'primary-navigation', 
                         'container'         => '',
                         'container_class'   => '',
                         'menu_id'           => '',
