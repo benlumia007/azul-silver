@@ -4,10 +4,6 @@
 function azulsilver_scripts_setup(){
     wp_enqueue_style('azulsilver-style', get_stylesheet_uri());
 	
-	// Enable Suerfish
-    wp_enqueue_script('azulsilver-supefish', get_template_directory_uri() . '/extras/js/superfish.js', array('jquery'), '1202205', true);
-    wp_enqueue_script('azulsilver-supefish-settings', get_template_directory_uri() . '/extras/js/superfish-settings.js', array('azulsilver-supefish'), '1202205', true);
-	
 	// Enable Font Awesome
 	wp_enqueue_style('azulsilver-font-awesome', get_stylesheet_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '1202205', true);
 	
