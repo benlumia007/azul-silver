@@ -3,7 +3,7 @@ Azul Silver WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.4
-Tested up to: 4.6
+Tested up to: 4.7.4
 Stable tag: 0.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -53,6 +53,12 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.3.6
+Tweak the Output for Strings
+
+Version: 0.3.5
+Minor Change
+
 Version: 0.3.4
 Small Changes
 

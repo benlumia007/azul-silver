@@ -25,10 +25,12 @@ if ( post_password_required() ) {
 
 <?php if (have_comments()) : ?>
     <h2 class="comments-title">
-            <?php
-                    printf(_nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'azul-silver' ),
-                            number_format_i18n( get_comments_number() ));
-            ?>
+        <?php $count = get_comments_number(); ?>
+        <?php if ('1' === $count) {
+            printf(_x('One Comment on %s', 'comments title', 'camaraderie'), get_the_title());
+        } else {
+            printf(_nx('%1$s Comment on %2$s', '%1$s Comments on %2$s', $count, 'comments title', 'camaraderie'), number_format_i18n($count), get_the_title());
+        } ?>
     </h2>
 
     <ol class="comment-list">

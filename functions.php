@@ -54,7 +54,7 @@ function azul_silver_enqueue_scripts_setup() {
     
     // Enable and Activate Navigation JavaScript for Azul Silver.
     wp_enqueue_script('azul-silver-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20160601', true);
-	wp_localize_script('azul-silver-navigation', 'screenReaderText', array(
+	wp_localize_script('azul-silver-navigation', 'azulsilverScreenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'azul-silver') . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'azul-silver') . '</span>',
 	));

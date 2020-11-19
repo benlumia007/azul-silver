@@ -24,5 +24,8 @@ content. This content.php is the main content that will be displayed.
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>
     </div>
+    <div class="entry-taxonomies">
+        <?php azul_silver_entry_taxonomies(); ?>
+    </div>
 </article>
 <?php comments_template(); ?>

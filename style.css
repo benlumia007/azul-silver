@@ -4,8 +4,8 @@ Theme URI: https://www.lumiathemes.com/portfolio/azul-silver/
 Author: Benjamin Lu
 Author URI: https://www.lumiathemes.com/
 Description: Azul Silver is converted into a responsive theme with the same features as before. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available. 
-Version: 0.3.5
-License: Silver Quantum is distributed under the terms of the GNU GPL.
+Version: 0.3.6
+License: Azul Silver is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-header, one-column, right-sidebar, threaded-comments, translation-ready, two-columns
 Text Domain: azul-silver
@@ -818,7 +818,7 @@ a:hover {
 .primary-navigation ul {
 	display: block;
 	list-style: none;
-	margin: 0.2em 0 0 0;
+	margin: 0 0 0 0;
 }
 
 .primary-navigation li {
@@ -834,6 +834,8 @@ a:hover {
 	position: relative;
 	display: block;
 	padding: 0.5em 1em;
+    font-family: 'Sanchez', serif;
+    font-weight: 0.875em;
 	font-weight: 400;
 	text-decoration: none;
 	line-height: 1.6em;
@@ -890,8 +892,8 @@ a:hover {
 	position: absolute;
 	height: 27px;
 	width: 27px;
-	top: 7px;
-	right: 8px;
+	top: 6px;
+	right: 6px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -910,7 +912,7 @@ a:hover {
 	line-height: 27px;
 	position: relative;
 	top: 0;
-	left: 1px;
+	left: 0;
 	width: 27px;
 }
 
@@ -931,7 +933,7 @@ a:hover {
 	left: 1em;
     display: none;
 	font-size: 1em;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Sanchez' serif;
 	background-color: #000;
 	color: #fff;
 	border: solid 2px #fff;
@@ -1112,7 +1114,7 @@ span.page-numbers {
 .cat-link,
 .tag-link {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
@@ -1122,7 +1124,7 @@ span.page-numbers {
 
 .tag-list,
 .cat-list {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .entry-footer {
@@ -1637,7 +1639,6 @@ input[type = "search"] {
 ================================================================================================
 */
 @media screen and (min-width: 769px) {
-    
     .primary-navigation {
         clear: none;
     }
@@ -1648,7 +1649,7 @@ input[type = "search"] {
         background: #313131;
 		position: relative;
 		max-width: 100%;
-		margin: 0.5em auto;
+		margin: 0 auto;
 		padding: 0;
 	}
     
@@ -1670,7 +1671,7 @@ input[type = "search"] {
 	.primary-navigation.toggled ul {
 		max-height: none;
 		padding-left: 0;
-		text-align: center;
+		text-align: right;
         
 	}
 	
@@ -1694,6 +1695,10 @@ input[type = "search"] {
 		display: block;
 		text-align: left;
 	}
+    
+    .primary-navigation a {
+        padding: 0.5em 1em;
+    }
 	
 	.primary-navigation a,
 	.primary-navigation ul ul li:last-child a {
@@ -1745,7 +1750,7 @@ input[type = "search"] {
 	
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
-		top: 6px;
+		top: 7px;
 		right: 8px;
 
 	}
