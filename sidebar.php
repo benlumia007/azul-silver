@@ -1,5 +1,3 @@
-<section id = "site-sidebar">
-    <aside>
-        <?php dynamic_sidebar('post-content'); ?>   
-    </aside>
-</section>
+<div id="site-sidebar">
+    <?php dynamic_sidebar('post-content'); ?>   
+</div>

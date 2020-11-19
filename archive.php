@@ -1,6 +1,6 @@
 <?php get_header(); ?>
     <?php if (have_posts()) : ?>
-			<h2 class = "content-archive">
+			<h2 class="content-archive">
 			<?php 
 				if (is_category()) {
 					printf(__('Category: ','azulsilver'));

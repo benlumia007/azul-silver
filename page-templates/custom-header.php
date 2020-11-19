@@ -20,7 +20,6 @@ function azulsilver_custom_header_setup() {
 
 		// Callbacks for styling the header and the admin preview.
 		'wp-head-callback'       => 'azulsilver_header_style',
-		'admin-head-callback'    => 'azulsilver_admin_header_style',
 	);
 	add_theme_support( 'custom-header', $args );
 }
@@ -33,7 +32,7 @@ function azulsilver_header_style() {
             return;
         }
 ?>
-	<style type="text/css" id="azulsilver-header-css">
+	<style type="text/css">
 	<?php if (!display_header_text()) : ?>
             .site-title,
             .site-description {

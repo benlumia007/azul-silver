@@ -1,4 +1,4 @@
-<section id ="site-content-full" class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found cf">
+<div id ="site-content-full" class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found cf">
 	<h1 class="entry-title">
 		<?php 
 			if ( is_404() ) { _e( 'Page not available', 'azulsilver' ); }
@@ -27,7 +27,7 @@
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>
-</section>
+</div>
     <?php
     if ( is_404() || is_search() ) {
         
