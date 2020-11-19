@@ -5,7 +5,7 @@ Description: Azul Silver is highly customizable, simple, and easy to navigate. A
 License: Azul Silver is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, gray, one-column, post-formats, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
-Version: 0.1.2
+Version: 0.1.3
 Text Domain: azulsilver
 
 This theme like WordPress is licensed under the GPL.
@@ -510,7 +510,7 @@ a:hover.page-numbers {
 }
 
 .header-search {
-	margin: 5px 0 0 710px;
+	margin: 5px 0 0 640px;
 	position: absolute;
 }
 
@@ -519,7 +519,12 @@ div.header-search span.screen-reader-text {
 }
 
 div.header-search input.search-submit {
-	display: none;
+	background: #FFFFFF;
+	border: none;
+	color: #0195C5;
+	margin-right: 10px;
+	padding: 5px 14px;
+	vertical-align: top;
 }
 
 div.header-search .search-field {
@@ -587,6 +592,6 @@ input.search-field, input.search-submit {
 	margin-bottom: 20px;
 }
 
-input.search-submit {
+#site-sidebar input.search-submit {
 	display: none;
 }
