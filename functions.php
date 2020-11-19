@@ -48,7 +48,6 @@ if (!function_exists('azulsilver_theme_setup')){
 		add_theme_support('post-thumbnails');
 		add_image_size('azulsilver-small-thumbnail', 150, 150, true);
 		add_image_size('azulsilver-medium-thumbnail', 650, 150, true);
-		add_image_size('azulsilver-large-thumbnail', 900, 200, true);
     }
     add_action('after_setup_theme', 'azulsilver_theme_setup');
 }

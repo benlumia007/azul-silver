@@ -5,7 +5,7 @@ Description: Azul Silver is highly customizable, simple, and easy to navigate. A
 License: Azul Silver is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, gray, one-column, post-formats, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
-Version: 0.1.3
+Version: 0.1.4
 Text Domain: azulsilver
 
 This theme like WordPress is licensed under the GPL.
@@ -112,7 +112,7 @@ hgroup {
 #site-content {
     float: left;
     margin: 0;
-	margin-bottom: 30px;
+    margin-bottom: 30px;
     padding: 0;
     width: 650px;
 
@@ -235,64 +235,64 @@ nav {
 }
 
 .metadata-posted-on {
-	margin: 0 0 0 8px;
+    margin: 0 0 0 8px;
 }
 
 .metadata-posted-in {
-	margin: 0 0 0 8px;
-	padding-bottom: 10px;
+    margin: 0 0 0 8px;
+    padding-bottom: 10px;
 }
 
 .alignleft {
-	float: left;
+    float: left;
 }
 
 .aligncenter {
-	text-align: center;
+    text-align: center;
 }
 
 .alignright {
-	float: right;
+    float: right;
 }
 
 #site-content table {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .content-archive {
-	padding: 30px;
-	padding-bottom: 0;
-	text-align: center;
+    padding: 30px;
+    padding-bottom: 0;
+    text-align: center;
 }
 
 .content-search {
-	padding: 30px;
-	padding-bottom: 0;
-	text-align: center;
+    padding: 30px;
+    padding-bottom: 0;
+    text-align: center;
 }
 
 .wp-caption {
-	background: #EEEEEE;
-	border: 1px solid #CCCCCC;
-	margin-top: 20px;
-	max-width: 100%;
-	padding: 8px;
-	text-align: center;
+    background: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    margin-top: 20px;
+    max-width: 100%;
+    padding: 8px;
+    text-align: center;
 }
 
 .wp-caption-text {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .wp-caption.alignleft {
-	margin-right: 10px;
-	margin-top: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
 }
 
 .wp-caption.alignright {
-	margin-left: 10px;
-	margin-top: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 
@@ -301,15 +301,15 @@ nav {
 }
 
 .small-post-thumbnail {
-	float: left;
-	margin-top: 18px;
-	margin-right: 15px;
-	margin-bottom: 0;
-	position: relative;
+    float: left;
+    margin-top: 18px;
+    margin-right: 15px;
+    margin-bottom: 0;
+    position: relative;
 }
 
-.medium-post-thumbnail {
-	margin-bottom: 10px;
+.medium-post-thumbnail img {
+    max-width: 100%;
 }
 
 .site-content-full {
@@ -401,12 +401,12 @@ ol.children {
 }
 
 .comment-reply-title {
-	border-top: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
     font-size: 20px;
     margin: 0;
-	margin-top: 10px;
+    margin-top: 10px;
     padding: 0;
-	padding-top: 10px;
+    padding-top: 10px;
 }
 .comment-form label {
     display: block;
@@ -425,7 +425,7 @@ ol.children {
 
 .form-allowed-tags {
     font-size: 13px;
-	width: 600px;
+    width: 600px;
 }
 
 .form-submit .submit {
@@ -466,17 +466,17 @@ ol.children {
 }
 
 #respond textarea#comment{
-	height: 200px;
-	width: 600px;	
+    height: 200px;
+    width: 600px;	
 }
 
 .post-navigation {
-	width: 650px
+    width: 650px
 }
 
 .paging-navigation ul {
     margin: 0;
-	text-align: center;
+    text-align: center;
 }
 
 .paging-navigation li { display: inline; }
@@ -510,8 +510,8 @@ a:hover.page-numbers {
 }
 
 .header-search {
-	margin: 5px 0 0 640px;
-	position: absolute;
+    margin: 5px 0 0 640px;
+    position: absolute;
 }
 
 div.header-search span.screen-reader-text {
@@ -519,17 +519,17 @@ div.header-search span.screen-reader-text {
 }
 
 div.header-search input.search-submit {
-	background: #FFFFFF;
-	border: none;
-	color: #0195C5;
-	margin-right: 10px;
-	padding: 5px 14px;
-	vertical-align: top;
+    background: #FFFFFF;
+    border: none;
+    color: #0195C5;
+    margin-right: 10px;
+    padding: 5px 14px;
+    vertical-align: top;
 }
 
 div.header-search .search-field {
-	vertical-align: top;
-	padding: 3px;
+    vertical-align: top;
+    padding: 3px;
 }
 
 .widget-title {
@@ -576,22 +576,22 @@ div.header-search .search-field {
 }
 
 .sticky {
-	background: #CCCCCC;
+    background: #CCCCCC;
 }
 
 .sticky .entry-title {
-	border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
 span.screen-reader-text {
-	display: none;
+    display: none;
 }
 
 input.search-field, input.search-submit {
-	margin-top: 5px;
-	margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 #site-sidebar input.search-submit {
-	display: none;
+    display: none;
 }
