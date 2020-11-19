@@ -17,21 +17,19 @@
                         <img src = "<?php header_image(); ?>" class = "header-image" width = "<?php echo get_custom_header()->width; ?>" height = "<?php echo get_custom_header()->height; ?>" alt="" />
                     <?php endif; ?>
             </header>
-            <div class = "search-toggle">
-                <i class = "fa fa-search"> </i>
-                <a href ="#search-container" class = "screen-reader-text"><?php _e('Search', 'azulsilver'); ?></a>
+
+            <nav class = "primary-navigation cf">
+            <div class = "search-toggle cf">
+                <i class = "fa fa-search cf"> </i>
+                <a href ="#search-container" class = "screen-reader-text cf"><?php _e('Search', 'azulsilver'); ?></a>
             </div>
-            <nav class = "primary-navigation">
                     <?php wp_nav_menu(array(
                         'theme_location'    => 'primary-navigation', 
-                        'container'         => 'nav',
-                        'container_class'   => '',
-                        'menu_id'           => '',
-                        'menu_class'        => 'primary-navigation',
-                        'items_wrap'        => '<ul class = "%2$s">%3$s</ul>',
                         )); 
                     ?> 
+                    <?php azulsilver_social_menu(); ?>
             </nav>
+
             <div id = "search-container" class = "search-box-wrapper cf">
                 <div class = "search-box cf">
                     <?php get_search_form(); ?>

@@ -1,4 +1,4 @@
-<section class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found">
+<section id ="site-content-full" class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found cf">
 	<h1 class="entry-title">
 		<?php 
 			if ( is_404() ) { _e( 'Page not available', 'azulsilver' ); }
@@ -27,12 +27,12 @@
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>
-
+</section>
     <?php
     if ( is_404() || is_search() ) {
         
         ?>
-    <header class="page-header"><h1 class="page-title"><?php _e( 'Most Recent Posts.', 'azulsilver' ); ?></h1></header>
+    <header class="page-header"><h3><?php _e( 'Most Recent Posts', 'azulsilver' ); ?></h3></header>
     <?php
 
         $args = array(
@@ -54,4 +54,3 @@
 
     }
     ?>
-</section>

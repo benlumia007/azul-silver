@@ -34,7 +34,8 @@ if (!function_exists('azulsilver_theme_setup')){
 		
                 // Register Navigation Menu
                 register_nav_menus(array(
-                'primary-navigation' => __('Primary Navigation', 'azulsilver'),
+                    'primary-navigation' => __('Primary Navigation', 'azulsilver'),
+                    'social'             => __('Social Menu', 'azulsilver'),
                 ));
 		
 		// This theme styles the visual editor with editor-styles.css to mach the theme style.
@@ -191,4 +192,20 @@ function azulsilver_paging_navigation() {
 	<?php
 	endif;
 }
-?>
+
+function azulsilver_social_menu(){
+    if(has_nav_menu('social')){
+        wp_nav_menu(array(
+            'theme_location'    =>  'social',
+            'container'         =>  'div',
+            'container_id'      => 'menu-social',
+            'container_class'     => 'menu-social',
+            'menu_id'           => 'menu-social-items',
+            'menu_class'        => 'menu-items',
+            'depth'             => 1,
+            'link_before'       => '<span class = "screen-reader-text cf">',
+            'link_after'        => '</span>',
+            'fallback_cb'       => '',
+        ));
+    };
+}
