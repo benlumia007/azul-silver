@@ -1,4 +1,4 @@
-Azul Silver WordPress Theme
+﻿Azul Silver WordPress Theme
 ================================================================================================
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
@@ -53,6 +53,12 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.3.8
+- Updated Author and Theme URI
+
+Version: 0.3.7 
+- Minor Changes
+
 Version: 0.3.6
 Tweak the Output for Strings
 
