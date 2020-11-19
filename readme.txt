@@ -3,8 +3,8 @@
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.4
-Tested up to: 4.7.4
-Stable tag: 0.3.4
+Tested up to: 4.9.4
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,13 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.4.0 - 
+- Theme URI Changed
+- Author URI Changed
+
+Version: 0.3.9
+- Minor Changes
+
 Version: 0.3.8
 - Updated Author and Theme URI
 
