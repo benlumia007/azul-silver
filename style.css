@@ -5,7 +5,7 @@ Description: Azul Silver is highly customizable, simple, and easy to navigate. A
 License: Azul Silver is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, gray, one-column, post-formats, right-sidebar, sticky-post, threaded-comments, two-columns
-Version: 0.0.2
+Version: 0.0.3
 Text Domain: azulsilver
 
 This theme like WordPress is licensed under the GPL.
@@ -29,23 +29,20 @@ use it to make something cool, have fun, and share what you have learned with ot
     clear: both;
 }
 
-/************************* Azul Silver Basic Layout *************************/
+/************************* Azul Silver Main Basic Layout *************************/
 body {
     background: #999999;
     font-family: Calibri;
     font-size: 16px;
-    margin: 0;
-    margin-top: 20px;
-    padding: 0;
 }
 
 a {
-    color: #0195C5;
-    text-decoration: none;
+  color: #0195C5;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #666666
+    color: #999999;
 }
 
 #container {
@@ -55,24 +52,38 @@ a:hover {
     box-shadow: 0 0 10px 0;
     margin: 0 auto;
     padding: 10px 10px 10px 10px;
-    width: 960px;
+    width: 900px;
 }
 
+img {
+	margin: 0;
+	max-width: 100%;
+	padding: 0;
+}
+
+img.alignleft {
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+img.alignright {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+
+
+/************************* Azul Silver Header Navigation *************************/
 .site-header {
-    background: url(images/header-image.jpg) no-repeat;
-    height: 210px;   
+	background: url(images/header-image.jpg) no-repeat;
+	height: 205px;
 }
-
-.header-image {
-	height: 200px;
-}
-
 
 hgroup {
     height: auto;
     line-height: 25px;
     margin: 10px 10px 10px 10px;
-    padding: 20px 20px 20px 20px;
+    padding: 10px 10px 10px 10px;
     position: absolute;
     text-align: center;
     width: auto;
@@ -98,47 +109,42 @@ hgroup {
     padding: 0;
 }
 
-.site-content {
+#site-content {
     float: left;
     margin: 0;
+	margin-bottom: 30px;
     padding: 0;
-    width: 680px;
+    width: 650px;
+
 }
 
-.site-sidebar {
+#site-sidebar {
+    list-style: none;
     float: right;
-    margin: 0;
-    padding: 0;
-    width: 250px;
+    width: 220px;
 }
 
 .site-footer {
-    margin: 0 auto;
-    margin-top: 10px;
-    text-align: center;
-    width: 960px;
+	margin: 10px auto;
+	padding-bottom: 20px;
+	text-align: center;
+	width: 900px;
 }
 
 .site-footer a {
-    color: #FFFFFF;
-}
-
-img {
-	max-width: 100%;
+	color: #FFFFFF;
 }
 
 /************************* Azul Silver Primary Navigation *************************/
-.site-navigation {
-    font-size: 16px;
-    height: 32px;
-    line-height: 16px;
-    margin-bottom: 15px;
+nav {
+	margin-bottom: 10px;
 }
 
 .primary-navigation {
     background: #313131;
     float: left;
     display: block;
+    height: 37px;
     position: relative;
     width: 100%;
 }
@@ -167,10 +173,12 @@ img {
     padding: 0;
     z-index: 99999;
 }
+
 .primary-navigation ul ul ul {
     left: 100%;
     top: 0;
 }
+
 .primary-navigation ul ul a {
     width: 200px;
 }
@@ -184,7 +192,9 @@ img {
     background: #4d4d4d;
 }
 .primary-navigation ul ul :hover > a {
+
 }
+
 .primary-navigation ul ul a:hover {
     background: #313131;
 }
@@ -212,91 +222,98 @@ img {
 
 /************************* Azul Silver Main Content Navigation *************************/
 .entry-title {
-    border-bottom: 1px solid #CCCCCC;
-    font-size: 20px;
+    border-bottom: 1px solid #CCCCCC;    
+    font-size: 18px;
     margin: 0;
-    padding: 0;
+    padding: 5px 5px;
+    padding-bottom: 0;
 }
 
-.meta-posted-on {
-    font-size: 14px;
-    margin-top: 4px;
+.entry-title a {
+    color: #0195C5;
+    text-decoration: none;
 }
 
-.meta-posted-in {
-    margin-bottom: 20px;
+.metadata-posted-on {
+	margin: 0 0 0 8px;
 }
 
-.single-post-thumbnail img {
-    margin-bottom: 10px;
-}
-
-.small-post-thumbnail {
-    float: left;
-    margin-top: 20px;
-    margin-right: 10px;
-    position: relative;
+.metadata-posted-in {
+	margin: 0 0 0 8px;
+	padding-bottom: 10px;
 }
 
 .alignleft {
-    float: left;
+	float: left;
 }
 
 .aligncenter {
-    text-align: center;
+	text-align: center;
 }
 
 .alignright {
-    float: right;
+	float: right;
 }
 
-.sticky {
-    
+#site-content table {
+	margin-top: 10px;
+}
+
+.content-archive {
+	padding: 30px;
+	padding-bottom: 0;
+	text-align: center;
+}
+
+.content-search {
+	padding: 30px;
+	padding-bottom: 0;
+	text-align: center;
 }
 
 .wp-caption {
-    
+	background: #EEEEEE;
+	border: 1px solid #CCCCCC;
+	margin-top: 20px;
+	max-width: 100%;
+	padding: 8px;
+	text-align: center;
 }
 
 .wp-caption-text {
-    
+	margin: 0;
+	padding: 0;
 }
+
+.wp-caption.alignleft {
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.wp-caption.alignright {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
 
 .gallery-caption {
-    
+
 }
 
-.content-navigation {
-	text-align: center;
-	padding: 10px;
+.small-post-thumbnail {
+	float: left;
+	margin-top: 18px;
+	margin-right: 15px;
+	margin-bottom: 0;
+	position: relative;
 }
 
-.paging-navigation ul {
-    margin: 0;
-}
-
-.paging-navigation li { display: inline; }
-
-a.page-numbers,
-span.page-numbers {
-     padding: .3em .7em;
-     color: #333;
-     color: hsl(0, 0%, 20%);
-}
-
-a:hover.page-numbers {
-    color: #000;
-    color: hsl(0, 0%, 0%);
-}
-
-.paging-navigation .current {
-    font-weight: bold;
-    color: #000;
-    color: hsl(0, 0%, 0%);
+.medium-post-thumbnail {
+	margin-bottom: 10px;
 }
 
 
-/************************* Azul Silver Main Content Navigation *************************/
+/************************* Azul Silver Comments Content Navigation *************************/
 .comments-title {
     border-bottom: 1px solid #CCCCCC;
     font-size: 20px;
@@ -380,9 +397,12 @@ ol.children {
 }
 
 .comment-reply-title {
+	border-top: 1px dotted #CCCCCC;
     font-size: 20px;
     margin: 0;
+	margin-top: 10px;
     padding: 0;
+	padding-top: 10px;
 }
 .comment-form label {
     display: block;
@@ -400,7 +420,8 @@ ol.children {
 }
 
 .form-allowed-tags {
-    font-size: 14px;
+    font-size: 13px;
+	width: 600px;
 }
 
 .form-submit .submit {
@@ -439,32 +460,129 @@ ol.children {
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
     background-color:#e9e9e9;
 }
-/************************* Azul Silver Sidebar Navigation *************************/
-.site-sidebar ul, .site-sidebar li {
-    list-style-type: none;
+
+#respond textarea#comment{
+	height: 200px;
+	width: 600px;	
+}
+
+.post-navigation {
+	width: 650px
+}
+
+.paging-navigation ul {
     margin: 0;
-    padding: 0;
+	text-align: center;
+}
+
+.paging-navigation li { display: inline; }
+
+a.page-numbers,
+span.page-numbers {
+     padding: 0 5px;
+     color: #0195C5;
+}
+
+a:hover.page-numbers {
+    color: #999999;
+}
+
+.paging-navigation .current {
+    font-weight: bold;
+    color: #000;
+}
+
+/************************* Azul Silver Sidebar Content Navigation *************************/
+
+#site-sidebar ul {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+}
+
+#site-sidebar li {
+    list-style: none;
+    margin: 0;
+}
+
+.header-search {
+	float: right;
+	margin-top: 30px;
+}
+
+div.header-search span.screen-reader-text {
+  display: none;
+}
+
+div.header-search input.search-submit {
+	background: #FFFFFF;
+	border: none;
+	color: #0195C5;
+	margin-right: 10px;
+	padding: 5px 14px;
+	vertical-align: top;
+}
+
+div.header-search .search-field {
+	vertical-align: top;
+	padding: 3px;
 }
 
 .widget-title {
-    border-bottom: 1px solid #CCCCCC;
-    font-size: 20px;
+    border-bottom: 1px solid #CCCCCC;    
+    color: #000000;
+    font-size: 18px;
     margin: 0;
-    margin: 0;
+    padding: 5px 5px;
+    padding-bottom: 0;
 }
 
-.site-sidebar ul li:last-child, select#cat.postform, select:last-child , .textwidget:last-child, .tagcloud:last-child, .site-sidebar #searchsubmit{
-	margin-bottom: 20px;
+.tagcloud {
+    margin-bottom: 10px;
 }
 
-.site-sidebar .searchform .screen-reader-text {
-	display: block;
+.textwidget {
+    margin-bottom: 10px;
+    padding: 5px 5px;   
 }
 
-.site-sidebar .searchform {
-	margin: 2px 0;
+#wp-calendar {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
 }
 
-select {
-	margin: 2px 0;
+#wp-calendar a {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#wp-calendar caption {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#wp-calendar #today {
+    font-weight: bold;
+}
+
+#wp-calendar #today a {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.sticky {
+	background: #CCCCCC;
+}
+
+.sticky .entry-title {
+	border-bottom: 1px solid #000000;
+}
+
+span.screen-reader-text {
+	display: none;
+}
+
+input.search-field, input.search-submit {
+	margin-top: 5px;
 }

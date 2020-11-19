@@ -1,52 +1,59 @@
-<?php 
+<?php
+
+/********** Enqueue Scripts and styles. **********/
 function azulsilver_scripts_setup(){
-    wp_enqueue_style('azulsilver_style', get_stylesheet_uri());
-    wp_enqueue_style( 'azulsilver_fontawesome', get_stylesheet_directory_uri() . '/extra/css/font-awesome.css', array(), '4.0.3' );
+    wp_enqueue_style('azulsilver-style', get_stylesheet_uri());
 	
-	if (is_singular() && comments_open() && get_option('thread_comments')){
-		wp_enqueue_script('comment-reply');
-	}
+	// Enable Suerfish
+    wp_enqueue_script('azulsilver-supefish', get_template_directory_uri() . '/extras/js/superfish.js', array('jquery'), '1202205', true);
+    wp_enqueue_script('azulsilver-supefish-settings', get_template_directory_uri() . '/extras/js/superfish-settings.js', array('azulsilver-supefish'), '1202205', true);
+	
+	// Enable Font Awesome
+	wp_enqueue_style('azulsilver-font-awesome', get_stylesheet_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '1202205', true);
+	
+	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
+		wp_enqueue_script( 'comment-reply' );
+    
 }
 add_action('wp_enqueue_scripts', 'azulsilver_scripts_setup');
 
-function azulsilver_theme_setup(){
-    //Content Width
-    if (!isset($content_width)) {
-        $content_width = 680;
+/********** WordPress Features - Theme Defaults **********/
+if (!function_exists('azulsilver_theme_setup')){
+    function azulsilver_theme_setup(){
+		// Setup Content Width value based on the theme's design and stylesheet.
+		if (!isset($content_width))
+			$content_width = 650;
+		
+		// Title Tag
+		add_theme_support('title-tag');
+		
+		add_theme_support( 'html5', array( 'search-form' ) );
+		
+        // Register Navigation Menu
+        register_nav_menu('primary-navigation', __('Primary Navigation', 'azulsilver') );
+		
+		// This theme styles the visual editor with editor-styles.css to mach the theme style.
+		add_editor_style();
+
+		// Adds RSS feed links to <head> for post and comments.
+		add_theme_support('automatic-feed-links');
+			
+		// This theme does support custom background color.
+		add_theme_support('custom-background', array(
+			'default-color'	=> 'cccccc',
+			)); 
+			
+		// Enable Featured Image
+		add_theme_support('post-thumbnails');
+		add_image_size('small-thumbnail', 150, 150, true);
+		add_image_size('medium-thumbnail', 650, 150, true);
+		add_image_size('large-thumbnail', 900, 200, true);
     }
-	
-	//Custom Background
-	add_theme_support('custom-background', array(
-	'default-color'	=> '999999',
-	)); 
-	
-	
-    //Primary Navigation Section
-    register_nav_menu('primary-navigation', __('Primary Navigation','azulsilver'));
-    
-    // Title Tag
-    add_theme_support('title-tag');
-    
-    // Enable Post Thumbnails
-    add_theme_support('post-thumbnails');
-    add_image_size('large-thumb', 680, 200, true);
-    add_image_size('index-thumb', 200, 200, true);
-    
-    // Add Automatic Feeds
-    add_theme_support( 'automatic-feed-links' );
-    
-    // Enable Editor Styles
-    add_editor_style();
-	
-	
+    add_action('after_setup_theme', 'azulsilver_theme_setup');
 }
-add_action('after_setup_theme', 'azulsilver_theme_setup');
 
 // Add Support for Custom Header Image.
-require(get_template_directory() . '/include/custom-header.php');
-
-// Template Tags for this theme
-require(get_template_directory() . '/include/template-tags.php');
+require(get_template_directory() . '/page-templates/custom-header.php');
 
 //Register Post Sidebar, Page Sidebar, and Custom Sidebar
 function azulsilver_widget_sidebar_setup(){
@@ -61,7 +68,123 @@ function azulsilver_widget_sidebar_setup(){
        'before_title'   => '<h1 class = "widget-title">',
        'after_title'    => '</h1>',
     ));
+	
+    //Register Sidebar for Page Only
+    register_sidebar(array(
+       'name'           => __('Secondary Sidebar', 'azulsilver'),
+       'id'             => 'page-content',
+       'description'    => ('Appear on Pages Only'),
+       'before_widget'  => '<li id = "%1$s class = "%1$s">',
+       'after_widget'   => '</li>',
+       'before_title'   => '<h1 class = "widget-title">',
+       'after_title'    => '</h1>',
+    ));
+	
+    //Register Sidebar for Page Only
+    register_sidebar(array(
+       'name'           => __('Custom Sidebar', 'azulsilver'),
+       'id'             => 'custom-content',
+       'description'    => ('Appear on Custom Pages Only'),
+       'before_widget'  => '<li id = "%1$s class = "%1$s">',
+       'after_widget'   => '</li>',
+       'before_title'   => '<h1 class = "widget-title">',
+       'after_title'    => '</h1>',
+    ));
     
 }
 add_action('widgets_init', 'azulsilver_widget_sidebar_setup');
+
+function azulsilver_metadata_posted_on_setup(){
+    // This function will call and output The Date and Author
+    printf( __( '<i class="fa fa-calendar"></i>&nbsp;&nbsp;%2$s &nbsp;&nbsp;&nbsp; <i class = "fa fa-user"></i>&nbsp;&nbsp;%3$s', 'azulsilver' ), 'meta-prep meta-prep-author',
+    sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+        get_permalink(),
+        esc_attr( get_the_time() ),
+        get_the_date('m/d/Y')),
+    sprintf( '<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>',
+    get_author_posts_url( get_the_author_meta( 'ID' ) ),
+    esc_attr( sprintf( __( 'View all posts by %s', 'azulsilver' ), get_the_author() ) ),
+    get_the_author()
+    ));
+
+    // This function will only display when sticky post is enabled!
+    if (is_sticky()){
+        echo '&nbsp;&nbsp;&nbsp; <i class="fa fa-thumb-tack sticky"></i>&nbsp;&nbsp;Sticky Post';
+    } 
+    
+    if (has_post_thumbnail()){
+        echo'&nbsp;&nbsp;&nbsp; <i class="fa fa-bookmark"></i>&nbsp;&nbsp; Featured Image';
+    }
+
+    // This function will call and output Comments
+    printf('&nbsp;&nbsp;&nbsp; <i class = "fa fa-comments"></i>&nbsp;&nbsp;'); 
+    if (comments_open()) {
+        comments_popup_link('Add Comment','1 Comment','% Comments');
+    }
+    else {
+        _e('Comments Closed', 'azulsilver');
+    }
+}
+
+function azulsilver_metadata_posted_in_setup() {
+	// Retrieves tag list of current post, separated by commas.
+	$tag_list = get_the_tag_list( '', ', ' );
+	if ( $tag_list ) {
+			$posted_in = __( '<i class = "fa fa-archive"></i>&nbsp;&nbsp; %1$s &nbsp;&nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp; %2$s', 'azulsilver' );
+	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
+			$posted_in = __( '<i class = "fa fa-archive"></i> %1$s', 'azulsilver' );
+	}
+	// Prints the string, replacing the placeholders.
+	printf(
+			$posted_in,
+			get_the_category_list( ', ' ),
+			$tag_list,
+			get_permalink(),
+			the_title_attribute( 'echo=0' )
+	);
+}
+
+function azulsilver_paging_navigation() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+
+	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+	$pagenum_link = html_entity_decode( get_pagenum_link() );
+	$query_args   = array();
+	$url_parts    = explode( '?', $pagenum_link );
+
+	if ( isset( $url_parts[1] ) ) {
+		wp_parse_str( $url_parts[1], $query_args );
+	}
+
+	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+
+	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+
+	// Set up paginated links.
+	$links = paginate_links( array(
+		'base'     => $pagenum_link,
+		'format'   => $format,
+		'total'    => $GLOBALS['wp_query']->max_num_pages,
+		'current'  => $paged,
+		'mid_size' => 2,
+		'add_args' => array_map( 'urlencode', $query_args ),
+		'prev_text' => __( 'Previous', 'azulsilver' ),
+		'next_text' => __( 'Next', 'azulsilver' ),
+                'type'      => 'list',
+	) );
+
+	if ( $links ) :
+
+	?>
+	<nav class="navigation paging-navigation" role="navigation">
+			<?php echo $links; ?>
+	</nav><!-- .navigation -->
+	<?php
+	endif;
+}
 ?>

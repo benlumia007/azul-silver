@@ -1,5 +1,5 @@
 <section id = "site-sidebar">
     <aside>
-        <?php dynamic_sidebar('post-content'); ?>   
+        <?php dynamic_sidebar('custom-content'); ?>   
     </aside>
 </section>
