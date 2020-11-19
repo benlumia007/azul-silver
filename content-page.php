@@ -5,4 +5,3 @@
 				<?php comments_template(); ?>
 	</article>
 </section>
-<?php get_sidebar('page'); ?>

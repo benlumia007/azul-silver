@@ -6,4 +6,5 @@
     <?php else : ?>
             <?php get_template_part('content', 'none'); ?>
     <?php endif; ?>
+<?php get_sidebar('page'); ?>
 <?php get_footer(); ?>

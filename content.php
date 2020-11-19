@@ -10,4 +10,3 @@
 				<div class = "metadata-posted-in"><small><?php azulsilver_metadata_posted_in_setup(); ?></small></div>
         </article>
     </section>
-<?php get_sidebar('post-content'); ?>

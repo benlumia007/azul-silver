@@ -9,4 +9,5 @@
     <?php else : ?>
             <?php get_template_part('content', 'none'); ?>
     <?php endif; ?>
+<?php get_sidebar('post-content'); ?>
 <?php get_footer(); ?>
