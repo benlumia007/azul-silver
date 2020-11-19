@@ -11,4 +11,3 @@
         </article>
     </div>
 <?php get_sidebar('post-content'); ?>
-<?php get_sidebar('post-content'); ?>
