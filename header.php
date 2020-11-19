@@ -24,6 +24,7 @@ of this theme. This also displays the navigation menu as well or any extra featu
         <?php wp_head(); ?>
     </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
     <section id="site-container" class="site-container">
         <header id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">
             <div id="site-branding" class="site-branding">
