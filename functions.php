@@ -21,6 +21,7 @@ add_action('wp_enqueue_scripts', 'azulsilver_scripts_setup');
 if (!function_exists('azulsilver_theme_setup')){
     function azulsilver_theme_setup(){
 		// Setup Content Width value based on the theme's design and stylesheet.
+		global $content_width;
 		if (!isset($content_width))
 			$content_width = 650;
 		
@@ -54,6 +55,8 @@ if (!function_exists('azulsilver_theme_setup')){
 
 // Add Support for Custom Header Image.
 require(get_template_directory() . '/page-templates/custom-header.php');
+
+load_theme_textdomain( 'azulsilver', get_template_directory() . '/languages' );
 
 //Register Post Sidebar, Page Sidebar, and Custom Sidebar
 function azulsilver_widget_sidebar_setup(){

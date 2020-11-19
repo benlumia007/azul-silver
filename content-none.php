@@ -32,7 +32,7 @@
     if ( is_404() || is_search() ) {
         
         ?>
-    <header class="page-header"><h1 class="page-title">Most recent posts:</h1></header>
+    <header class="page-header"><h1 class="page-title"><?php _e( 'Most Recent Posts.', 'azulsilver' ); ?></h1></header>
     <?php
 
         $args = array(

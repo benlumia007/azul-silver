@@ -1,6 +1,6 @@
     </section>
     <footer class = "site-footer">
-        Theme By: Benjamin Lu<br /> <a href = "http://wordpress.org" target = "_blank">Proudly Powered by WordPress</a>
+        <?php _e( 'Theme By: Benjamin Lu. <br /> <a href = "http://wordpress.org" target = "_blank">Powered By WordPress</a>', 'azulsilver' ); ?>
     </footer>
   <?php wp_footer(); ?>
 </body>
