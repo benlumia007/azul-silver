@@ -7,7 +7,7 @@ function azulsilver_scripts_setup(){
 	// Enable Font Awesome
 	wp_enqueue_style('azulsilver-font-awesome', get_stylesheet_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '1202205', true);
 	
-	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
+	if (is_singular() && comments_open() && get_option('thread_comments'))
 		wp_enqueue_script( 'comment-reply' );
     
 }
@@ -24,6 +24,10 @@ if (!function_exists('azulsilver_theme_setup')){
 		// Title Tag
 		add_theme_support('title-tag');
 		
+		// Load Theme Textdomain
+		load_theme_textdomain( 'azulsilver', get_template_directory() . '/languages' );
+		
+		// Support Search Form in HTML5 format
 		add_theme_support( 'html5', array( 'search-form' ) );
 		
         // Register Navigation Menu
@@ -42,17 +46,15 @@ if (!function_exists('azulsilver_theme_setup')){
 			
 		// Enable Featured Image
 		add_theme_support('post-thumbnails');
-		add_image_size('small-thumbnail', 150, 150, true);
-		add_image_size('medium-thumbnail', 650, 150, true);
-		add_image_size('large-thumbnail', 900, 200, true);
+		add_image_size('azulsilver-small-thumbnail', 150, 150, true);
+		add_image_size('azulsilver-medium-thumbnail', 650, 150, true);
+		add_image_size('azulsilver-large-thumbnail', 900, 200, true);
     }
     add_action('after_setup_theme', 'azulsilver_theme_setup');
 }
 
 // Add Support for Custom Header Image.
 require(get_template_directory() . '/page-templates/custom-header.php');
-
-load_theme_textdomain( 'azulsilver', get_template_directory() . '/languages' );
 
 //Register Post Sidebar, Page Sidebar, and Custom Sidebar
 function azulsilver_widget_sidebar_setup(){
@@ -61,7 +63,7 @@ function azulsilver_widget_sidebar_setup(){
     register_sidebar(array(
        'name'           => __('Primary Sidebar', 'azulsilver'),
        'id'             => 'post-content',
-       'description'    => ('Appear on Post Contents Only'),
+       'description'    => __('Appears on Posts Only', 'azulsilver'),
        'before_widget'  => '<li id = "%1$s class = "%1$s">',
        'after_widget'   => '</li>',
        'before_title'   => '<h1 class = "widget-title">',
@@ -72,7 +74,7 @@ function azulsilver_widget_sidebar_setup(){
     register_sidebar(array(
        'name'           => __('Secondary Sidebar', 'azulsilver'),
        'id'             => 'page-content',
-       'description'    => ('Appear on Pages Only'),
+       'description'    => __('Appears on Pages Only', 'azulsilver'),
        'before_widget'  => '<li id = "%1$s class = "%1$s">',
        'after_widget'   => '</li>',
        'before_title'   => '<h1 class = "widget-title">',
@@ -83,7 +85,7 @@ function azulsilver_widget_sidebar_setup(){
     register_sidebar(array(
        'name'           => __('Custom Sidebar', 'azulsilver'),
        'id'             => 'custom-content',
-       'description'    => ('Appear on Custom Pages Only'),
+       'description'    => __('Appear on Custom Pages Only', 'azulsilver'),
        'before_widget'  => '<li id = "%1$s class = "%1$s">',
        'after_widget'   => '</li>',
        'before_title'   => '<h1 class = "widget-title">',
