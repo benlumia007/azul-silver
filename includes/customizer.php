@@ -32,11 +32,11 @@ Table of Content
  1.0 - Customize Register (Setup)
 ================================================================================================
 */
-function silver_quantum_customize_register_setup($wp_customize) {
+function azul_silver_customize_register_setup($wp_customize) {
     // Enable and disable Display Site Title and Tagline for Azul Silver.
     $wp_customize->remove_control('display_header_text');
 }
-add_action('customize_register', 'silver_quantum_customize_register_setup');
+add_action('customize_register', 'azul_silver_customize_register_setup');
 
 /*
 ================================================================================================

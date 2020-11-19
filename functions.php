@@ -74,6 +74,9 @@ function azul_silver_theme_setup() {
     // Enable and activate add theme support (title tag) for Azul Silver.
     add_theme_support('title-tag');
     
+    // Enable and activate Load Theme Text Domain for Azul Silver.
+    load_theme_textdomain('azul-silver');
+    
     // Enable and activate add theme support (automatica feed links) for Azul Silver.
     add_theme_support('automatic-feed-links');
     
@@ -97,6 +100,14 @@ function azul_silver_theme_setup() {
     // Enable and activate Navigation for Azul Silver.
     register_nav_menus(array(
     'primary-navigation' => esc_html__('Primary Navigation', 'azul-silver'),
+    ));
+    
+    register_default_headers(array(
+        'header-image' => array(
+        'url'           => '%s/images/header-image.png',
+        'thumbnail_url' => '%s/images/header-image.png',
+        'description'   => __( 'Header Image', 'azul-silver' )
+        ),
     ));
 }
 add_action('after_setup_theme', 'azul_silver_theme_setup');
