@@ -7,7 +7,7 @@ Description: Azul Silver is highly customizable, simple, and easy to navigate. A
 License: Azul Silver is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, gray, one-column, post-formats, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
-Version: 0.1.6
+Version: 0.1.7
 Text Domain: azulsilver
 
 This theme like WordPress is licensed under the GPL.
@@ -85,10 +85,11 @@ hgroup {
     height: auto;
     line-height: 25px;
     margin: 10px 10px 10px 10px;
+    width: auto;
     padding: 10px 10px 10px 10px;
     position: absolute;
     text-align: center;
-    width: auto;
+    max-width: 860px;
 }
 
 .site-title {
@@ -114,6 +115,7 @@ hgroup {
 #site-content {
     float: left;
     margin: 0;
+    margin-top: 10px;
     margin-bottom: 30px;
     padding: 0;
     width: 650px;
@@ -123,6 +125,7 @@ hgroup {
 #site-sidebar {
     list-style: none;
     float: right;
+    margin-top: 10px;
     width: 220px;
 }
 
@@ -137,13 +140,66 @@ hgroup {
 	color: #FFFFFF;
 }
 
-/************************* Azul Silver Primary Navigation *************************/
-#site-navigation ul {
-    margin: 0 0 10px 0;
-    padding: 0;
-    list-style: none;
+
+.search-toggle {
+    color: #FFF;
+    cursor: pointer;
+    height: 37px;
+    margin: 0 0 0 863px;
+    position: absolute;
+    width: 37px;
+    z-index: 2;
 }
 
+.search-toggle:hover,
+.search-toggle.active{
+    background: #4D4D4D;
+    color: #FFF;
+}
+
+.fa-search {
+    padding: 10px;
+}
+
+.search-toggle .screen-reader-text {
+    display: none;
+}
+
+.search-toggle:hover {
+    color: #999999;
+}
+
+input[type = "search"] {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.search-box-wrapper {
+    display: none;
+    width: 100%;
+    z-index: 2;
+}
+
+.search-box {
+    background: #4d4d4d;
+}
+
+.search-box .search-field {
+    background: #FFF;
+    border: 0;
+    float: right;
+    margin: 8px 8px 8px 0;
+    padding: 5px;
+    width: 250px;
+}
+
+.search-box .search-submit {
+    display: none;
+}
+
+
+
+/************************* Azul Silver Primary Navigation *************************/
 .primary-navigation {
     background: #313131;
     float: left;
@@ -513,29 +569,6 @@ a:hover.page-numbers {
     margin: 0;
 }
 
-.header-search {
-    margin: 5px 0 0 640px;
-    position: absolute;
-}
-
-div.header-search span.screen-reader-text {
-  display: none;
-}
-
-div.header-search input.search-submit {
-    background: #FFFFFF;
-    border: none;
-    color: #0195C5;
-    margin-right: 10px;
-    padding: 5px 14px;
-    vertical-align: top;
-}
-
-div.header-search .search-field {
-    vertical-align: top;
-    padding: 3px;
-}
-
 .widget-title {
     border-bottom: 1px solid #CCCCCC;    
     color: #000000;
@@ -594,8 +627,10 @@ span.screen-reader-text {
 input.search-field, input.search-submit {
     margin-top: 5px;
     margin-bottom: 20px;
+    padding: 5px 5px;
 }
 
 #site-sidebar input.search-submit {
     display: none;
 }
+

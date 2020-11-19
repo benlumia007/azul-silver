@@ -9,9 +9,6 @@
     <body <?php body_class(); ?>>
         <section id = "container" class = "cf">
             <header class = "site-header">
-				<div class = "header-search">
-					<?php get_search_form(); ?>
-				</div>
                 <hgroup>
                     <h1 class = "site-title"><a href = "<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
                     <h2 class = "site-description"><?php bloginfo('description'); ?></h2>
@@ -20,14 +17,23 @@
                         <img src = "<?php header_image(); ?>" class = "header-image" width = "<?php echo get_custom_header()->width; ?>" height = "<?php echo get_custom_header()->height; ?>" alt="" />
                     <?php endif; ?>
             </header>
-            <nav id = "site-navigation">
+            <div class = "search-toggle">
+                <i class = "fa fa-search"> </i>
+                <a href ="#search-container" class = "screen-reader-text"><?php _e('Search', 'azulsilver'); ?></a>
+            </div>
+            <nav class = "primary-navigation">
                     <?php wp_nav_menu(array(
                         'theme_location'    => 'primary-navigation', 
-                        'container'         => '',
+                        'container'         => 'nav',
                         'container_class'   => '',
                         'menu_id'           => '',
                         'menu_class'        => 'primary-navigation',
                         'items_wrap'        => '<ul class = "%2$s">%3$s</ul>',
                         )); 
-                    ?>           
+                    ?> 
             </nav>
+            <div id = "search-container" class = "search-box-wrapper cf">
+                <div class = "search-box cf">
+                    <?php get_search_form(); ?>
+                </div>
+            </div>
